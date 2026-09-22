@@ -12,12 +12,12 @@ module adder4(
 	      input [3:0]      b,
 	      output [4:0] result);
 
-	wire cout0, cout1, cout2, cout3;
+	wire cout0, cout1, cout2;
 	
-	fulladd adder0(.x(a[0]), .y(b[0]), .cin(1'b0), .sum(result[0]), .cout(cout0));
+	fulladd adder0(.x(a[0]), .y(b[0]), .cin(cin), .sum(result[0]), .cout(cout0));
 	fulladd adder1(.x(a[1]), .y(b[1]), .cin(cout0), .sum(result[1]), .cout(cout1));
 	fulladd adder2(.x(a[2]), .y(b[2]), .cin(cout1), .sum(result[2]), .cout(cout2));
-	fulladd adder3(.x(a[3]), .y(b[3]), .cin(cout2), .sum(result[3]), .cout(cout3));
+	fulladd adder3(.x(a[3]), .y(b[3]), .cin(cout2), .sum(result[3]), .cout(cout));
 
 // add your code here -- you must use four instances of the full adder "fulladd", defined below
    
